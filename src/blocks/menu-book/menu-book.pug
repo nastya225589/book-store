@@ -1,0 +1,18 @@
+mixin menu-book(selected)
+
+  -
+    var menu = {
+        'Все': '/',
+        'Маркетинг': '/',
+        'Научпоп': '/',
+        'Бизнес': '/',
+        'Творчество': '/',
+        'Бизнесc': '/'
+      };
+
+  nav.menu-book
+    ul.menu-book__list
+      each val, key in menu
+        li(class= selected.toLowerCase() === key.toLowerCase() ? 'menu-book__item  menu-book__item--active' : 'menu-book__item')
+          a(href=val, title=key)= key
+
