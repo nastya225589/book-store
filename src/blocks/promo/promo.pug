@@ -1,0 +1,8 @@
+mixin promo(arrival, text, poster)
+  .promo
+    .promo__wrapper
+      p.promo__new-arrival= arrival
+      p.promo_text= text
+      a.promo__btn(href="/") Хочу узнать о книге больше
+    .promo__photo
+      img(src= poster, alt='Симпсоны', width='302', height='424')

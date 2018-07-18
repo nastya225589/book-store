@@ -9,22 +9,12 @@ block meta
 //-   script(src='some.js')
 
 block nav
-  -var selected = 'blog';
+  -var selected = 'книги';
   +main-nav(selected)
 
 block content
-  p Растровые спрайты:
-    span.chrome(style="display: inline-block;")
-    span.github-logo(style="display: inline-block;")
-    span.placeholder(style="display: inline-block;")
-  hr
-  p Векторные спрайты
-    svg(width="24", height="24")
-      use(xlink:href="img/sprite-svg.svg#loupe")
-    svg(width="24", height="24")
-      use(xlink:href="img/sprite-svg.svg#rgb")
-    svg(width="24", height="24")
-      use(xlink:href="img/sprite-svg.svg#tea-cup")
+  +promo("Новое поступление книги «Симпсоны и их математические секреты»", "Для поклонников сериала «Симпсоны» и для всех, кому интересна математика.")
+
 
 //- block append page-bottom
 //-   script(src='some.js')
