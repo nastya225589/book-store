@@ -1,0 +1,8 @@
+mixin book(photo, title, text, buy)
+  .book
+    .book__photo
+      img.book__photo-ing(src= photo, alt='Обложка книги', width='260', height='370')
+    h3.book__title= title
+    p.book__text= text
+    p.book__buy= buy
+
