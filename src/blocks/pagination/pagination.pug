@@ -1,0 +1,8 @@
+mixin pagination()
+  .pagination
+    - var x = 10;
+      ul.pagination__list
+        - for (var i=1; i<=x; i++) {
+          li.pagination__item
+            a.pagination__link= i
+        - }
