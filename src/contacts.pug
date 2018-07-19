@@ -1,0 +1,18 @@
+extends templates/layout-home.pug
+
+block meta
+  title book-store
+  meta(name='book-store', content='Home page!')
+
+//- block append head
+//-   link(rel="stylesheet", href="some.css")
+//-   script(src='some.js')
+
+block nav
+  -var selected = 'контакты';
+  +main-nav(selected)
+
+block content
+  +contacts()
+//- block append page-bottom
+//-   script(src='some.js')
