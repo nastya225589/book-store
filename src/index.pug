@@ -25,6 +25,10 @@ block content
     h2.delivery__title Доставим в любое место 
     p // ну почти в любое
     +delivery('http://dummyimage.com/50x40/c0c0c0', 'Покупаете книги на сайте в любимом формате — бумажные, электронные или аудио.')
-
+  
+  .new-book
+    h2.new-book__title Наши новинки
+    a.new-book__link(href="/") Все новинки
+    +new-book('http://dummyimage.com/260x370/c0c0c0', 'Латеральная логика', 'Головоломный путь к нестандартному мышлению')
 //- block append page-bottom
 //-   script(src='some.js')
