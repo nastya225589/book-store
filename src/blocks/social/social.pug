@@ -1,0 +1,12 @@
+mixin social(fbNum, vkNum, likes, unlikes)
+  .social
+    ul.social__list
+      li.social__item
+        a.social__link.social__link--fb= fbNum
+      li.social__item
+        a.social__link.social__link--vk= vkNum
+      li.social__item
+        button.social__btn.social__btn--likes= likes
+      li.social__item
+        button.social__btn.social__btn--unlikes= unlikes
+
