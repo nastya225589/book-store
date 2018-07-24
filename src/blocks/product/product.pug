@@ -1,0 +1,72 @@
+mixin product(props)
+
+  //- Принимает:
+  //-   props {
+  //-     img: ''           {string} - адрес img
+  //-     author: ''         {string} - автор
+  //-     name: ''          {string} - название
+  //-     descr: ''         {string} - короткое описание
+  //-     code : ''         {string} - Артикул
+  //-     stock : ''        {string} - В наличии
+  //-     publishing : ''   {string} - Издательство
+  //-     price : ''        {string} - Цена
+  //-     pages:            {array} - массив с превью страниц
+  //- Вызов:
+        +product({
+          img: 'http://dummyimage.com/300x425/c0c0c0'
+          author: 'Эдди Юн'
+          name: 'Суперпотребители'
+          descr: 'Кто это и почему они так важны для вашего бизнеса'
+          code : '645478'
+          stock : '5'
+          publishing : 'еарар'
+          price : '500'
+          pages: [
+            'http://dummyimage.com/100x200/c0c0c0',
+            'http://dummyimage.com/100x200/dddddd',
+          ]
+        })
+
+  article.product
+    .product__inner
+      .product__img-wrap
+        img.product__img(src=props.img)
+        .product__thumbs
+          - props.pages.forEach(function(item) {
+              a.product__thumbs-link(href=item)
+                img(src=item)
+          - });
+      .product__header
+        h1.product__title
+          small= props.author
+          = props.name
+        p.product__descr= descr
+      .product__info
+        table.product__table
+          tr
+            th Артикул
+            td= props.code
+          tr
+            th В наличии
+            td #{stock} шт.
+          tr
+            th Издательство
+            td= publishing
+          tr
+            th Цена
+            td= price
+        form.product__form
+          +text-fild({
+            mods: 'gray',
+            val: '1',
+            attrs: {
+              type: 'number',
+              name: 'number',
+            }
+          })(class="product__form-input")
+          +btn('Добавить в корзину')(class="product__form-btn")
+
+
+
+
+
