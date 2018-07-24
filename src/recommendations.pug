@@ -2,7 +2,7 @@ extends templates/layout-home.pug
 
 block meta
   title book-store
-  meta(name='book-store', content='Home page!')
+  meta(name='description', content='book-store')
 
 //- block append head
 //-   link(rel="stylesheet", href="some.css")
@@ -13,8 +13,30 @@ block nav
   +main-nav(selected)
 
 block content
-  +preview("http://dummyimage.com/120x139/c0c0c0", "http://dummyimage.com/120x139/c0c0c0", "http://dummyimage.com/120x139/c0c0c0")
+  +product({
+    img: 'http://dummyimage.com/300x425/c0c0c0',
+    author: 'Эдди Юн',
+    name: 'Суперпотребители',
+    descr: 'Кто это и почему они так важны для вашего бизнеса',
+    code : '645478',
+    stock : '5',
+    publishing : 'еарар',
+    price : '500',
+    pages: [
+      'http://dummyimage.com/100x200/c0c0c0',
+      'http://dummyimage.com/100x200/dddddd',
+    ]
+  })
+
+  +likes()
+
+  .more-books
+    h2.more-books__title Книги по тематике
+    .more-books__link
+      a(href="/") Больше книг по теме
+    +more-books('http://dummyimage.com/260x370/c0c0c0', 'Латеральная логика', 'Головоломный путь к нестандартному мышлению', '#')
 
   +library()
+
 //- block append page-bottom
 //-   script(src='some.js')

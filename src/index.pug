@@ -2,7 +2,7 @@ extends templates/layout-home.pug
 
 block meta
   title book-store
-  meta(name='book-store', content='Home page!')
+  meta(name='description', content='book-store')
 
 //- block append head
 //-   link(rel="stylesheet", href="some.css")
@@ -13,11 +13,16 @@ block nav
   +main-nav(selected)
 
 block content
-  +promo("Новое поступление книги «Симпсоны и их математические секреты»", "Для поклонников сериала «Симпсоны» и для всех, кому интересна математика.", "http://dummyimage.com/302x424/c0c0c0")
+  +promo("Новое поступление книги «Симпсоны и их математические секреты»", "http://dummyimage.com/302x424/c0c0c0", "#")
+    p Для поклонников сериала «Симпсоны» и для всех, кому интересна математика.
   
   +menu-book('Все')
+  
+  .books
+    - var books = [{photo:'http://dummyimage.com/260x370/c0c0c0', title:'Латеральная логика', text:'Головоломный путь к нестандартному мышлению', buy:'500 ₽'}, {photo:'http://dummyimage.com/260x370/c0c0c0', title:'Путеводитель по лжи', text:'Головоломный путь к нестандартному мышлению', buy:'500 ₽'}];
+    for book in books
+      +book(book)
 
-  +book('http://dummyimage.com/260x370/c0c0c0', 'Латеральная логика', 'Головоломный путь к нестандартному мышлению', '500 ₽')
 
   +pagination()
 
@@ -25,10 +30,12 @@ block content
     h2.delivery__title Доставим в любое место 
     p // ну почти в любое
     +delivery('http://dummyimage.com/50x40/c0c0c0', 'Покупаете книги на сайте в любимом формате — бумажные, электронные или аудио.')
-  
+
   .new-book
-    h2.new-book__title Наши новинки
-    a.new-book__link(href="/") Все новинки
-    +new-book('http://dummyimage.com/260x370/c0c0c0', 'Латеральная логика', 'Головоломный путь к нестандартному мышлению')
+    .new-book__wrapper
+      h2.new-book__title Наши новинки
+      .new-book__link
+        a(href="/") Все новинки
+      +new-book('http://dummyimage.com/260x370/c0c0c0', 'Латеральная логика', 'Головоломный путь к нестандартному мышлению', '#')
 //- block append page-bottom
 //-   script(src='some.js')

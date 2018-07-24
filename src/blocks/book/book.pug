@@ -1,8 +1,9 @@
-mixin book(photo, title, text, buy)
+mixin book(books)
   .book
     .book__photo
-      img.book__photo-ing(src= photo, alt='Обложка книги', width='260', height='370')
-    h3.book__title= title
-    p.book__text= text
-    p.book__buy= buy
-
+      a.book__link(href= books.link)
+        img.book__img(src= books.photo, alt='Обложка книги', width='260', height='370')
+    a.book__link(href= books.link)
+      h3.book__title= books.title
+    p.book__text= books.text
+    p.book__buy= books.buy

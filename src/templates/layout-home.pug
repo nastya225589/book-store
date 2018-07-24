@@ -18,10 +18,11 @@ html(class="no-js  page", lang="ru")
 
   body
     .page__inner
-      .page__content
+      
+      +page-header()
+        block nav
 
-        +page-header()
-          block nav
+      .page__content
 
         block content
 
