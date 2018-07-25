@@ -1,19 +1,21 @@
 mixin page-header()
   header.page-header
-    
-    .page-header__logo
-      +logo()
+    .page-header__inner
 
-    .page-header__time
-      p с 9:00 до 19:00
+      .page-header__logo
+        +logo()
 
-    .page-header__nav
-      button.main-nav__toggle#main-nav__toggle
-        span.main-nav__toggle-hamburger
-      +main-nav("")
-    
-    .page-header__buy
-      a.page-header__basket(href="/" title="icon_bascket")
+      .page-header__time
+        p с 9:00 до 19:00
 
-    .page-header__phone
-      a.page-header__call(href="tel:+79111234567" title="button_phone")
+      .page-header__dsafda
+        .page-header__nav
+          button.main-nav__toggle#main-nav__toggle
+            span.main-nav__toggle-hamburger
+          +main-nav("")
+
+        .page-header__buy
+          a.page-header__basket(href="/" title="icon_bascket") 111
+
+        .page-header__phone
+          a.page-header__call(href="tel:+79111234567" title="button_phone") 222
