@@ -6,7 +6,9 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  display: block;
+
   img {
-    padding: 17px 30px;
+    margin: 17px 30px;
   }
 }
