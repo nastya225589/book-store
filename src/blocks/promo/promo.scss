@@ -1,9 +1,64 @@
-// В этом файле должны быть стили для БЭМ-блока promo, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока promo, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .promo {
 
   $block-name:                &; // #{$block-name}__element
+  color: #000;
+
+  &__wrapper {
+    @media (min-width: $screen-lg) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    width: 292px;
+    margin: 40px 0 28px;
+    font-size: $font-size--sm;
+    font-style: italic;
+
+    @media (min-width: $screen-lg) {
+      width: 328px;
+      font-size: $font-size;
+    }
+  }
+
+  &__title {
+    margin: 45px 0 45px;
+    width: 280px;
+    font-size: $font-size--h3;
+    font-weight: 700;
+
+    @media (min-width: $screen-lg) {
+      width: 520px;
+      font-size: $font-size--h1 + 4px;
+    }
+  }
+
+  &__border {
+    width: 440px;
+    border: 8px solid $gray-light--light;
+  }
+
+  &__btn {
+    margin-bottom: 30px;
+
+    a {
+      font-size: $font-size;
+      color: $third-color;
+      text-decoration: none;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
+  }
 
 }

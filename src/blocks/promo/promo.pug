@@ -1,10 +1,12 @@
-mixin promo(title, poster, link)
+mixin promo(text, title, poster, link)
   .promo
     .promo__wrapper
-      h2.promo__title= title
-      div.promo_text
-        block
-      a.promo__btn(href= link) Хочу узнать о книге больше
+      .promo__book
+        .promo__text= text
+        .promo__border
+          h3.promo__title= title
+          .promo__btn
+            a(href= link) Хочу узнать о книге больше
       .promo__photo
         a(href= link)
           img(src= poster, alt='книга', width='302', height='424')

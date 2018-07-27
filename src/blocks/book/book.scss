@@ -5,4 +5,38 @@
 .book {
 
   $block-name:                &; // #{$block-name}__element
+
+  &__link img{
+    height: 370px;
+    display: block;
+  }
+
+  &__title {
+    margin: 40px 0 30px;
+    width: 250px;
+    font-size: $font-size--h3;
+    font-weight: 700;
+    color: $dark;
+  }
+
+  &__text {
+    margin: 25px 0;
+    width: 250px;
+    font-size: $font-size;
+    font-style: italic;
+  }
+
+  &__buy {
+    margin: 0;
+    font-size: $font-size;
+    font-weight: 700;
+  }
+}
+
+.books {
+  @media (min-width: $screen-sm) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+  }
 }
