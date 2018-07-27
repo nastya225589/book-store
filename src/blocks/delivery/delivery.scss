@@ -1,4 +1,4 @@
-// В этом файле должны быть стили для БЭМ-блока delivery, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока delivery, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
@@ -6,4 +6,25 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    width: 300px;
+    font-size: $font-size--h2;
+    color: $dark;
+  }
+
+  &__text {
+    font-size: $font-size;
+    color: $gray-dark;
+  }
+
+  &__photo-img {
+    text-align: center;
+  }
+
+  &__descr {
+    width: 243px;
+    text-align: center;
+    font-size: $font-size--sm;
+    color: $dark;
+  }
 }

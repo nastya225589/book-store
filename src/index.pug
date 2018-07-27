@@ -15,9 +15,9 @@ block nav
 block content
   +promo("Новое поступление книги «Симпсоны и их математические секреты»", "http://dummyimage.com/302x424/c0c0c0", "#")
     p Для поклонников сериала «Симпсоны» и для всех, кому интересна математика.
-  
+
   +menu-book('Все')
-  
+
   .books
     - var books = [{photo:'http://dummyimage.com/260x370/c0c0c0', title:'Латеральная логика', text:'Головоломный путь к нестандартному мышлению', buy:'500 ₽'}, {photo:'http://dummyimage.com/260x370/c0c0c0', title:'Путеводитель по лжи', text:'Головоломный путь к нестандартному мышлению', buy:'500 ₽'}];
     for book in books
@@ -27,9 +27,12 @@ block content
   +pagination()
 
   .delivery
-    h2.delivery__title Доставим в любое место 
-    p // ну почти в любое
+    h2.delivery__title Доставим в любое место
+    p.delivery__text // ну почти в любое
     +delivery('http://dummyimage.com/50x40/c0c0c0', 'Покупаете книги на сайте в любимом формате — бумажные, электронные или аудио.')
+    +delivery('http://dummyimage.com/50x40/c0c0c0', 'Бесплатно доставляем заказы от 3 000  по всей России.')
+    +delivery('http://dummyimage.com/50x40/c0c0c0', 'Мы подарим вам «Набор читателя» и добавим в посылку.')
+    +delivery('http://dummyimage.com/50x40/c0c0c0', 'Доставка в более чем 300 городов России, по Москве и Санкт-Петербургу — бесплатно.')
 
   .new-book
     .new-book__wrapper
