@@ -1,9 +1,23 @@
 svg4everybody(); // иницализация полифила для IE
 
 $(document).ready(function(){
+<<<<<<< HEAD
   // весь ваш код c jQuery
   AOS.init();
+=======
+  $('#main-nav__toggle').on('click', function() {
+    $('#main-nav').toggleClass('main-nav--open');
+  });
+
+  $("[data-main-nav]").hide();
+  $('#main-nav__toggle').on('click', function(){
+    $('[data-main-nav]').slideToggle(250);
+    return false;
+  });
+
+>>>>>>> page-header
 });
+
 // Если на проекте нет jQuery, но хочется $( document ).ready... (IE9+)
 // function ready(fn) {
 //   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
