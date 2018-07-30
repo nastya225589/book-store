@@ -30,11 +30,11 @@ block content
   .delivery
     h2.delivery__title Доставим в любое место
     p.delivery__text // ну почти в любое
-
-    +delivery('http://dummyimage.com/50x40/c0c0c0', 'Покупаете книги на сайте в любимом формате — бумажные, электронные или аудио.')
-    +delivery('http://dummyimage.com/50x40/c0c0c0', 'Бесплатно доставляем заказы от 3 000  по всей России.')
-    +delivery('http://dummyimage.com/50x40/c0c0c0', 'Мы подарим вам «Набор читателя» и добавим в посылку.')
-    +delivery('http://dummyimage.com/50x40/c0c0c0', 'Доставка в более чем 300 городов России, по Москве и Санкт-Петербургу — бесплатно.')
+    .delivery__inner
+      +delivery('http://dummyimage.com/50x40/c0c0c0', 'Покупаете книги на сайте в любимом формате — бумажные, электронные или аудио.')
+      +delivery('http://dummyimage.com/50x40/c0c0c0', 'Мы подарим вам «Набор читателя» и добавим в посылку.')
+      +delivery('http://dummyimage.com/50x40/c0c0c0', 'Бесплатно доставляем заказы от 3 000  по всей России.')
+      +delivery('http://dummyimage.com/50x40/c0c0c0', 'Доставка в более чем 300 городов России, по Москве и Санкт-Петербургу — бесплатно.')
 
   .new-book
     .new-book__wrapper
