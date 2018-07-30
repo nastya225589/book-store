@@ -6,6 +6,13 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  margin-bottom: 50px;
+  align-self: center;
+
+  @media (min-width: $screen-sm) {
+    align-self: end;
+  }
+
   &__link img{
     height: 370px;
     display: block;
@@ -17,10 +24,14 @@
     font-size: $font-size--h3;
     font-weight: 700;
     color: $dark;
+
+    @media (min-width: $screen-sm) {
+      margin: 35px 0 25px;
+    }
   }
 
   &__text {
-    margin: 25px 0;
+    margin: 20px 0;
     width: 250px;
     font-size: $font-size;
     font-style: italic;
@@ -34,9 +45,20 @@
 }
 
 .books {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   @media (min-width: $screen-sm) {
-    display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding-top: 50px;
+    margin: 0 auto;
     width: 1200px;
   }
 }
