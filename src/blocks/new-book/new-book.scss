@@ -1,4 +1,4 @@
-// В этом файле должны быть стили для БЭМ-блока new-book, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока new-book, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
@@ -6,4 +6,55 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  margin-top: 100px;
+
+  &__caption {
+    @media (min-width: $screen-sm) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+
+  &__title {
+    margin: 0 0 40px;
+    font-size: $font-size--h2;
+    color: $dark;
+  }
+
+  &__inner {
+    background-color: $main-color;
+    display: flex;
+
+    @media (min-width: $screen-lg) {
+      justify-content: space-around;
+    }
+  }
+
+  &__wrapper {
+  }
+
+  &__link {
+    margin-bottom: 40px;
+    font-size: $font-size;
+    color: $third-color;
+    text-decoration: none;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__name {
+    width: 260px;
+    font-size: $font-size--h3;
+    color: $dark;
+  }
+
+  &__text {
+    width: 260px;
+    font-size: $font-size;
+    font-style: italic;
+    color: $dark;
+  }
 }

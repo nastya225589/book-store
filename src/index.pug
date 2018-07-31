@@ -37,10 +37,13 @@ block content
       +delivery('http://dummyimage.com/50x40/c0c0c0', 'Доставка в более чем 300 городов России, по Москве и Санкт-Петербургу — бесплатно.')
 
   .new-book
-    .new-book__wrapper
+    .new-book__caption
       h2.new-book__title Наши новинки
-      .new-book__link
-        a(href="/") Все новинки
-      +new-book('http://dummyimage.com/260x370/c0c0c0', 'Латеральная логика', 'Головоломный путь к нестандартному мышлению', '#')
+      a.new-book__link(href="/") Все новинки
+    .new-book__inner
+      +new-book("/img/logics.jpg", 'Латеральная логика', 'Головоломный путь к нестандартному мышлению', '#')
+      +new-book('/img/GuideToLies.jpg', 'Путеводитель по лжи', 'Критическое мышление в эпоху постправды', '#')
+      +new-book('/img/physics.jpg', 'Дао физики', 'Исследование параллелей между современной физикой и восточной философией', '#')
+      +new-book('/img/NotObvious.jpg', 'Не очевидно', 'Как выявлять тренды раньше других', '#')
 //- block append page-bottom
 //-   script(src='some.js')
