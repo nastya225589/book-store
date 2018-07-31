@@ -1,10 +1,11 @@
 mixin page-footer()
   footer.page-footer
-    .page-footer__logo
-      +logo()
+    .page-footer__wrapper
+      .page-footer__logo
+        +logo()
 
-    .page-footer__time
-      p с 9:00 до 19:00
-    
+      .page-footer__time
+        p с 9:00 до 19:00
+
     .page-footer__nav
       +main-nav("")
