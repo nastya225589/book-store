@@ -118,6 +118,10 @@
     }
   }
 
+  &__item--active {
+    color: $second-color;
+  }
+
   &__item-phone {
     margin: 20px 0;
     padding-left: 28px;
