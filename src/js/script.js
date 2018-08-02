@@ -13,6 +13,7 @@ $(document).ready(function(){
     $('[data-main-nav]').slideToggle(250);
     return false;
   });
+
 });
 
 // Если на проекте нет jQuery, но хочется $( document ).ready... (IE9+)
