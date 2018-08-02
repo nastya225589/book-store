@@ -12,3 +12,8 @@ mixin main-nav(selected)
       each val, key in menu
         li(class= selected.toLowerCase() === key.toLowerCase() ? 'main-nav__item  main-nav__item--active' : 'main-nav__item')
           a(href=val, title=key)= key
+      li.main-nav__item-phone
+        svg.main-nav__phone(width="16", height="16")
+              use(xlink:href="img/sprite-svg.svg#button_phone")
+        a.main-nav__call(href="tel:+79111234567" title="button_phone") 8 800 500-80-20
+

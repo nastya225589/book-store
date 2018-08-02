@@ -21,6 +21,20 @@
   min-width: 320px;
   min-height: 100%;
 
+  &__fb {
+    display: flex;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #000;
+    svg {
+      fill: #fff;
+    }
+
+
+  }
+
   &__inner {
     min-height: 100vh;
     display: flex;

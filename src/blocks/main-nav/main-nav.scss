@@ -57,6 +57,30 @@
     }
   }
 
+  &--open {
+    &__toggle-hamburger {
+      transition: background .3s 0;
+      background: transparent;
+
+      &:before,
+      &:after {
+        transition: top .3s, transform .3s .5s;
+        top: 0;
+      }
+
+      &:before {
+        transform: rotate3d(0, 0, 1, 45deg);
+      }
+
+      &:after {
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+    }
+  }
+
+  &--visible {
+    display: block;
+  }
   &__list {
     margin: 0;
     padding: 0;
@@ -89,8 +113,29 @@
 
       @media (min-width: $screen-sm) {
         margin: 0;
+        padding-left: 20px;
       }
     }
   }
 
+  &__item-phone {
+    margin: 20px 0;
+    padding-left: 28px;
+
+    @media (min-width: $screen-sm) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    fill: $third-color;
+  }
+
+  &__call {
+    padding-left: 10px;
+    text-decoration: none;
+    font-size: $font-size--sm;
+    font-weight: 700;
+    color: $third-color;
+  }
 }
