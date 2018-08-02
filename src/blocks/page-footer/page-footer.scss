@@ -5,15 +5,28 @@
 .page-footer {
 
   $block-name:                &; // #{$block-name}__element
-
+  padding: 0 10px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 320px;
+  margin: 0 auto;
+  width: 100%;
 
   @media (min-width: $screen-sm) {
-    justify-content: space-between;
+    padding: 0 20px;
+    max-width: 768px;
+    margin: 0 auto;
+    width: 100%;
   }
 
-  &__wrapper {
+  @media (min-width: $screen-lg) {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__inner {
     margin: 20px 0;
 
     @media (min-width: $screen-sm) {
@@ -31,6 +44,24 @@
 
     p {
       margin: 0;
+    }
+  }
+
+  &__wrap{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav--link {
+    a {
+      text-decoration: none;
+      font-size: $font-size--sm;
+      font-weight: 700;
+      color: #000;
+    }
+
+    @media (min-width: $screen-sm) {
+      display: none;
     }
   }
 }
