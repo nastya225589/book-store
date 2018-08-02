@@ -107,3 +107,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+iframe {
+  max-width: 1200px;
+  width: 100%;
+
+  @media (min-width: $screen-lg) {
+    padding: 0 20px;
+    margin: 0 auto;
+    display: inherit;
+  }
+}

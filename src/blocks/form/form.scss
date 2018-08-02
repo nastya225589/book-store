@@ -1,4 +1,4 @@
-// В этом файле должны быть стили для БЭМ-блока form, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока form, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
@@ -6,4 +6,127 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  padding: 0 10px;
+  max-width: 320px;
+  margin: 0 auto;
+  width: 100%;
+
+  @media (min-width: $screen-sm) {
+    padding: 0 20px;
+    min-width: 768px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 55px 0 25px;
+    font-size: $font-size--h2;
+    font-weight: 700;
+
+  }
+
+  &__text {
+    margin-bottom: 35px;
+    font-size: $font-size;
+    color: $dark;
+
+  }
+
+  &__entry-field {
+    margin-bottom: 40px;
+    font-size: $font-size;
+    width: 300px;
+    height: 30px;
+    background: none;
+    border: none;
+    border-bottom: 4px solid $gray--2;
+    font-family: $font-family;
+
+    &:hover {
+      border-bottom: 4px solid #f4d4e4;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-input-placeholder {
+      font-size: $font-size;
+      font-family: $font-family;
+      color: #a6a6a6;
+    }
+  }
+
+  &__btn {
+    order: 3;
+  }
+
+  &__checkbox {
+    position: absolute;
+    left: -999em;
+
+    & + label {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      &::before {
+        margin: 0 10px 0 0;
+        content: "";
+        display: inline-block;
+        vertical-align: -17%;
+        height: 20px;
+        width: 20px;
+        background-color: $gray-light--light;
+        border: 4px solid $gray--2;
+      }
+    }
+
+    &:checked + label::after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 6px;
+      top: 3px;
+      left: 4px;
+      border: 2px solid #d7569c;
+      border-top: none;
+      border-right: none;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-53deg);
+    }
+  }
+
+  label {
+    font-family: $font-family;
+    font-size: $font-size--sm;
+
+    a {
+      margin: 0 5px;
+      text-decoration: none;
+      color: $third-color;
+    }
+  }
 }
+
+
+
+
+
+
+
+

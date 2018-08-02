@@ -6,6 +6,24 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  padding: 0 10px;
+  max-width: 320px;
+  margin: 0 auto;
+  width: 100%;
+
+  @media (min-width: $screen-sm) {
+    padding: 0 20px;
+    min-width: 768px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   &__title {
     margin: 35px 0 35px;
     font-size: $font-size--h2 + 20px;
@@ -14,23 +32,36 @@
   }
 
   &__list {
-    padding-left: 20px;
     margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: $screen-sm) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__bullet{
+    fill: $third-color;
+    margin-top: 7px;
   }
 
   &__item {
     margin-bottom: 25px;
-    color: $third-color;
+    padding-left: 15px;
+    color: $dark;
     font-size: $font-size;
 
-    span {
-      color: $dark;
+    @media (min-width: $screen-sm) {
+      margin-right: 94px;
     }
-
   }
 
   &__link {
     text-decoration: none;
     color: $dark;
   }
+
+
 }
