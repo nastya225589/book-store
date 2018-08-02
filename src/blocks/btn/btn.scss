@@ -6,4 +6,21 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  width: 300px;
+  height: 50px;
+  color: #fff;
+  background-color: #1f1f1f;
+  border: none;
+  border-radius: 2px;
+  font-family: $font-family;
+  font-size: $font-size;
+
+  &:hover,
+  &:focus {
+    background-color: $second-color;
+  }
+
+  &:active {
+    background-color: $fourth-color;
+  }
 }
