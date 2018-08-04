@@ -15,9 +15,12 @@
   font-family: $font-family;
   font-size: $font-size;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $second-color;
+  }
+
+  &:focus {
+    outline: none;
   }
 
   &:active {

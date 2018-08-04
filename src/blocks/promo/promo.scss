@@ -7,8 +7,7 @@
   $block-name:                &; // #{$block-name}__element
   color: #000;
 
-
-  &__wrapper {
+  &__slick {
     padding: 0 10px;
     display: flex;
     justify-content: center;
@@ -30,7 +29,13 @@
       margin: 0 auto;
       width: 100%;
     }
+
+    &__wrapper {
+      display: flex;
+    }
   }
+
+
 
   &__text {
     width: 300px;

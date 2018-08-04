@@ -6,31 +6,53 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  padding: 0 10px;
-  max-width: 320px;
-  margin: 0 auto;
-  width: 100%;
-
-  @media (min-width: $screen-sm) {
-    padding: 0 20px;
-    min-width: 768px;
-    margin: 0 auto;
-    width: 100%;
-  }
+  margin: 40px 0 50px;
+  border: 8px solid $gray-light;
 
   @media (min-width: $screen-lg) {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 55px auto;
     width: 100%;
   }
+
+  @media (min-width: $screen-sm) {
+    margin: 45px 0 60px;
+  }
+
+  &__wrapper {
+    padding: 0 10px;
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (min-width: $screen-sm) {
+      padding: 0 20px;
+      min-width: 768px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @media (min-width: $screen-lg) {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
 
   &__inner {
     display: flex;
     flex-direction: column;
+
+    @media (min-width: $screen-lg) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
   }
 
   &__title {
-    margin: 55px 0 25px;
+    margin: 55px 0 20px;
     font-size: $font-size--h2;
     font-weight: 700;
 
@@ -54,7 +76,11 @@
     font-family: $font-family;
 
     &:hover {
-      border-bottom: 4px solid #f4d4e4;
+      border-bottom: 4px solid $main-color;
+    }
+
+    &:active {
+      border-bottom: 4px solid $second-color;
     }
 
     &:focus {
@@ -66,10 +92,25 @@
       font-family: $font-family;
       color: #a6a6a6;
     }
+
+    @media (min-width: $screen-sm) {
+      width: 330px;
+      margin-right: 33px;
+    }
   }
 
   &__btn {
+    margin: 40px 0 80px;
     order: 3;
+
+    @media (min-width: $screen-sm) {
+      margin: 40px 0 50px;
+    }
+
+    @media (min-width: $screen-lg) {
+      order: 0;
+          margin: 0 0 0 40px;
+    }
   }
 
   &__checkbox {
@@ -98,7 +139,7 @@
       position: absolute;
       width: 12px;
       height: 6px;
-      top: 3px;
+      top: 5px;
       left: 4px;
       border: 2px solid #d7569c;
       border-top: none;
@@ -112,8 +153,22 @@
   }
 
   label {
+    display: flex;
     font-family: $font-family;
     font-size: $font-size--sm;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 70px;
+    }
+
+    p {
+      margin: 0;
+      width: 226px;
+
+      @media (min-width: $screen-sm) {
+        width: 481px;
+      }
+    }
 
     a {
       margin: 0 5px;

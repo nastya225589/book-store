@@ -14,6 +14,8 @@ $(document).ready(function(){
     return false;
   });
 
+  $('.promo__slick').slick();
+
 });
 
 // Если на проекте нет jQuery, но хочется $( document ).ready... (IE9+)
