@@ -6,6 +6,71 @@
 
   $block-name:                &; // #{$block-name}__element
 
+
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: $main-color;
+    opacity: 0.9;
+
+    @media (max-width: ($screen-sm - 1)) {
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      width: 200px;
+    }
+
+    @media (min-width: $screen-sm) {
+      display: flex!important;
+      background-color: transparent;
+    }
+  }
+
+  &__item {
+    a {
+      padding-left: 50px;
+      margin-top: 20px;
+      display: block;
+      text-decoration: none;
+      font-size: $font-size--sm;
+      font-weight: 700;
+      color: #000;
+
+      @media (min-width: $screen-sm) {
+        margin: 0;
+        padding-left: 0;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  &__item--active {
+    color: $second-color;
+  }
+
+  &__item-phone {
+    margin: 20px 0;
+    padding-left: 28px;
+
+    @media (min-width: $screen-sm) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    fill: $third-color;
+  }
+
+  &__call {
+    padding-left: 10px;
+    text-decoration: none;
+    font-size: $font-size--sm;
+    font-weight: 700;
+    color: $third-color;
+  }
+
   &__toggle {
     display: block;
     background-color: transparent;
@@ -31,7 +96,7 @@
   &__toggle-hamburger {
     display: block;
     position: absolute;
-    top: 6px;
+    top: 5px;
     left: 0;
     right: 0;
     height: 2px;
@@ -80,66 +145,5 @@
 
   &--visible {
     display: block;
-  }
-  &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: $main-color;
-    opacity: 0.9;
-
-    @media (max-width: ($screen-sm - 1)) {
-      position: absolute;
-      top: 50px;
-      right: 10px;
-      width: 200px;
-    }
-
-    @media (min-width: $screen-sm) {
-      display: flex!important;
-      background-color: transparent;
-    }
-  }
-
-  &__item {
-    a {
-      padding-left: 50px;
-      margin-top: 20px;
-      display: block;
-      text-decoration: none;
-      font-size: $font-size--sm;
-      font-weight: 700;
-      color: #000;
-
-      @media (min-width: $screen-sm) {
-        margin: 0;
-        padding-left: 20px;
-      }
-    }
-  }
-
-  &__item--active {
-    color: $second-color;
-  }
-
-  &__item-phone {
-    margin: 20px 0;
-    padding-left: 28px;
-
-    @media (min-width: $screen-sm) {
-      display: none;
-    }
-  }
-
-  &__phone {
-    fill: $third-color;
-  }
-
-  &__call {
-    padding-left: 10px;
-    text-decoration: none;
-    font-size: $font-size--sm;
-    font-weight: 700;
-    color: $third-color;
   }
 }

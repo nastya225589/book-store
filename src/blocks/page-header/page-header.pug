@@ -8,17 +8,18 @@ mixin page-header()
         .page-header__time
           p с 9:00 до 19:00
 
-      .page-header__dsafda
+      .page-header__menu
         .page-header__nav
-          button.main-nav__toggle#main-nav__toggle
-            span.main-nav__toggle-hamburger
           +main-nav("")
 
-        .page-header__buy
-          a.page-header__basket(href="/" title="icon_bascket")
-            svg(width="20", height="21")
-              use(xlink:href="img/sprite-svg.svg#icon_bascket")
-        .page-header__phone
-          a.page-header__call(href="tel:+79111234567" title="button_phone")
-            svg(width="16", height="16")
-              use(xlink:href="img/sprite-svg.svg#button_phone")
+        .page-header__icon
+          .page-header__buy
+            a.page-header__basket(href="/" title="icon_bascket")
+              svg(width="20", height="21")
+                use(xlink:href="img/sprite-svg.svg#icon_bascket")
+          .page-header__phone
+            a.page-header__call(href="tel:+79111234567" title="button_phone")
+              svg(width="16", height="16")
+                use(xlink:href="img/sprite-svg.svg#button_phone")
+          button.main-nav__toggle#main-nav__toggle
+            span.main-nav__toggle-hamburger

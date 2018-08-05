@@ -7,41 +7,33 @@
   $block-name:                &; // #{$block-name}__element
 
   background-color: #fff;
-  max-width: 320px;
   margin: 0 auto;
-  width: 100%;
   height: 50px;
 
-  @media (min-width: $screen-sm) {
-    max-width: 768px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  @media (min-width: $screen-lg) {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
   &__inner {
-    padding: 0 10px;
+    padding-top: 15px;
+    width: 300px;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 
     @media (min-width: $screen-sm) {
-      padding: 0 20px;
+      width: 760px;
     }
+
+    @media (min-width: $screen-lg) {
+      width: 1160px;
+    }
+
   }
 
   &__wrap {
     display: flex;
-    align-items: center;
   }
 
   &__time {
+    margin: 0;
     display: none;
     padding: 0 30px;
 
@@ -50,47 +42,36 @@
       font-size: $font-size--sm;
       color: $gray;
     }
+
+    p {
+      margin: 0;
+    }
   }
 
-  &__dsafda {
+  &__menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__nav {
+    @media (min-width: $screen-sm) {
+      margin-right: 20px;
+    }
+  }
+
+  &__icon {
     display: flex;
     align-items: center;
   }
 
-  &__nav {
-    &:first-child {
-      order: 2;
-    }
-
-    @media (min-width: $screen-sm) {
-      margin-right: 40px;
-      order: 1;
-    }
-
-    @media (min-width: $screen-lg) {
-      margin-right: 80px;
-    }
-  }
-
-  &__buy:nth-child(2) {
-    order: 1;
-
-    @media (min-width: $screen-sm) {
-      margin-right: 25px;
-      order: 2;
-    }
+  &__basket {
+    margin-right: 20px;
   }
 
   &__phone {
     display: none;
-
-    &:nth-child(3) {
-      order: 3;
-    }
-
-     @media (min-width: $screen-sm) {
+    @media (min-width: $screen-sm) {
       display: block;
     }
   }
-
 }
