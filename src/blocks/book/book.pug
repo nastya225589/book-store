@@ -3,7 +3,7 @@ mixin book(books)
     .book__photo
       a.book__link(href= books.link)
         img.book__img(src= books.photo, alt='Обложка книги', width='260', height='370')
-    a.book__link(href= books.link)
-      h3.book__title= books.title
+    h3.book__title
+      a.book__link(href= books.link)= books.title
     p.book__text= books.text
     p.book__buy= books.buy

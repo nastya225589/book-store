@@ -6,14 +6,15 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  margin-bottom: 50px;
-  align-self: center;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  align-content: stretch;
+  position: relative;
 
   @media (min-width: $screen-sm) {
-    align-self: end;
   }
 
-  &__link img{
+  &__link img {
     height: 370px;
     display: block;
   }
@@ -41,16 +42,26 @@
     margin: 0;
     font-size: $font-size;
     font-weight: 700;
+
+    @media (min-width: $screen-sm) {
+      padding-top: 20px;
+      position: absolute;
+      bottom: 30px;
+      margin: 0;
+    }
   }
 }
 
 .books {
+  width: 300px;
+  margin: 0 auto;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   @media (min-width: $screen-sm) {
+    width: 728px;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
@@ -58,7 +69,7 @@
 
   @media (min-width: $screen-lg) {
     padding-top: 50px;
-    margin: 0 auto;
-    width: 1200px;
+    width: 1160px;
+    justify-content: space-between;
   }
 }
