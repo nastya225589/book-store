@@ -10,8 +10,9 @@ mixin menu-book(selected)
       };
 
   nav.menu-book
-    ul.menu-book__list
-      each val, key in menu
-        li(class= selected.toLowerCase() === key.toLowerCase() ? 'menu-book__item  menu-book__item--active' : 'menu-book__item')
-          a(href=val, title=key)= key
+    .menu-book__inner
+      ul.menu-book__list
+        each val, key in menu
+          li(class= selected.toLowerCase() === key.toLowerCase() ? 'menu-book__item  menu-book__item--active' : 'menu-book__item')
+            a(href=val, title=key)= key
 
