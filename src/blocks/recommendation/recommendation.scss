@@ -1,0 +1,195 @@
+// В этом файле должны быть стили для БЭМ-блока recommendation, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.recommendation {
+
+  $block-name:                &; // #{$block-name}__element
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-bottom: 140px;
+
+  &__title {
+    margin: 70px 0 40px;
+    font-size: $font-size--h2 + 20px;
+    color: $dark;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 300px 285px 285px 300px;
+    grid‑template‑rows: repeat(2, auto); /* ← ОБЯЗАТЕЛЬНО */
+    grid‑auto‑flow: column;
+
+    // grid-template-rows: auto;
+    // grid‑auto‑rows: minmax(170px, auto);
+    grid-gap: 10px;
+    grid-template-areas:
+      "recommendation__new-article recommendation__season-book  recommendation__season-book     recommendation__present"
+      "recommendation__photo       recommendation__season-book  recommendation__season-book     recommendation__present"
+      "recommendation__photo       recommendation__view         recommendation__children-book   recommendation__present"
+      "recommendation__old-book    recommendation__old-book     recommendation__old-book        recommendation__present";
+  }
+
+  &__new-article {
+    grid-area: recommendation__new-article;
+    padding-left: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 9.2px 0.8px rgba(64, 66, 172, 0.35);
+  }
+
+  &__new-article_title {
+    margin: 20px 0;
+    font-size: $font-size;
+    color: $dark;
+  }
+
+  &__new-article_descr {
+    margin: 0;
+    font-size: $font-size;
+    color: $dark;
+    line-height: 30px;
+  }
+
+  &__new-article_link {
+    display: block;
+    margin: 25px 0 0;
+    font-size: $font-size;
+    color: $third-color;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  &__photo {
+    grid-area: recommendation__photo;
+    background-image: url(/img/photo.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+  }
+
+  &__photo_title {
+    text-align: center;
+    font-size: $font-size--h3;
+    color: #fff;
+    text-decoration: none;
+
+    h3 {
+      margin-top: 120px;
+      font-weight: 400;
+    }
+  }
+
+  &__season-book {
+    border-radius: 4px;
+    background-image: url(/img/vote.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-area: recommendation__season-book;
+  }
+
+  &__season-book_title {
+    margin: 30px 0 20px;
+    text-align: center;
+    font-size: $font-size--h3;
+    color: #fff;
+  }
+
+  &__season-book_descr {
+    text-align: center;
+    font-size: $font-size;
+    color: #fff;
+    line-height: 30px;
+  }
+
+  &__view {
+    grid-area: recommendation__view;
+    background-color: #fff;
+    box-shadow: 0px 3px 9.2px 0.8px rgba(64, 66, 172, 0.35);
+    border-radius: 4px;
+    padding-left: 10px;
+  }
+
+  &__view_title {
+    margin: 20px 0;
+    font-size: $font-size;
+    color: $dark;
+  }
+
+  &__view_descr {
+    margin-bottom: 15px;
+    line-height: 30px;
+  }
+
+  &__view_btn {
+    width: 260px;
+  }
+
+  &__children-book {
+    grid-area: recommendation__children-book;
+    padding-left: 15px;
+    background-color: #ce6194;
+    border-radius: 4px;
+    box-shadow: 0px 3px 9.2px 0.8px rgba(64, 66, 172, 0.35);
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__children-book_title {
+    margin: 20px 0;
+    font-size: $font-size;
+    color: #fff;
+  }
+
+  &__children-book_descr {
+    line-height: 30px;
+    font-size: $font-size;
+    color: #fff;
+  }
+
+  &__old-book {
+    grid-area: recommendation__old-book;
+    background-image: url(/img/old-book.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    text-align: center;
+    justify‑self: center;
+    align‑self: center;
+  }
+
+  &__old-book_title {
+    margin: 20px 0;
+    font-size: $font-size--h3;
+    color: #fff;
+  }
+
+  &__old-book_descr {
+    margin: 20px 0;
+    font-size: $font-size;
+    color: #fff;
+  }
+
+  &__present {
+    grid-area: recommendation__present;
+  }
+
+  &__present_title {
+    padding-left: 20px;
+    margin: 30px 0 20px;
+    font-size: $font-size;
+  }
+
+  &__present_descr {
+    padding-left: 20px;
+    margin-bottom: 35px;
+    font-size: $font-size;
+    line-height: 30px;
+  }
+
+}

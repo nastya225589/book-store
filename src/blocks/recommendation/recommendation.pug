@@ -1,0 +1,34 @@
+mixin recommendation(props)
+  .recommendation__inner
+    article.recommendation__new-article
+      h3.recommendation__new-article_title= props.article_title
+      p.recommendation__new-article_descr= props.article_descr
+      a.recommendation__new-article_link(href="/")= props.article_link
+
+    .recommendation__photo
+      a.recommendation__photo_title(href="/")
+        h3= props.photo
+
+    .recommendation__season-book
+      h2.recommendation__season-book_title= props.season_title
+      p.recommendation__season-book_descr= props.season_descr
+
+    .recommendation__view
+      h3.recommendation__view_title= props.view_title
+      p.recommendation__view_descr= props.view_descr
+      button.btn.recommendation__view_btn(href="/")= props.view_button
+
+    .recommendation__children-book
+      a(href='/')
+        h3.recommendation__children-book_title= props.children_title
+      p.recommendation__children-book_descr= props.children_descr
+
+    .recommendation__old-book
+      h2.recommendation__old-book_title= props.oldbook_title
+      p.recommendation__old-book_descr= props.oldbook_descr
+
+    .recommendation__present
+      h3.recommendation__present_title= props.present_title
+      p.recommendation__present_descr= props.present_descr
+      +new-book('/img/GuideToLies.jpg', 'Путеводитель по лжи', 'Критическое мышление в эпоху постправды', '#')
+

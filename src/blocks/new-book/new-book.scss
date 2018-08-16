@@ -3,10 +3,35 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .new-book {
+  // overflow: hidden;
 
   $block-name:                &; // #{$block-name}__element
 
-  margin-top: 100px;
+  background-image: url(../img/bg_nes.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 150px;
+
+  @media (min-width: $screen-lg) {
+    background-position-y: 250px;
+
+  }
+
+
+  &__hh {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    @media (min-width: $screen-sm) {
+      width: 728px;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 1160px;
+    }
+
+   }
 
   &__caption {
     @media (min-width: $screen-sm) {
@@ -17,28 +42,44 @@
   }
 
   &__title {
-    margin: 0 0 40px;
     font-size: $font-size--h2;
     color: $dark;
   }
 
   &__inner {
-    background-color: $main-color;
     display: flex;
 
     @media (min-width: $screen-lg) {
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 
   &__wrapper {
   }
 
+  &__card {
+    margin: 0 auto;
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
   &__link {
-    margin-bottom: 40px;
+    display: grid;
     font-size: $font-size;
     color: $third-color;
     text-decoration: none;
+    // margin-bottom: 20px;
+
+    &:focus {
+      outline: none;
+    }
+
+    @media (min-width: 1200px) {
+      // margin: 40px 0;
+
+    }
   }
 
   &__link {
@@ -46,13 +87,13 @@
   }
 
   &__name {
-    width: 260px;
+    margin: 25px 0 20px;
     font-size: $font-size--h3;
     color: $dark;
   }
 
   &__text {
-    width: 260px;
+    margin: 0;
     font-size: $font-size;
     font-style: italic;
     color: $dark;
