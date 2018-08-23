@@ -6,22 +6,18 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  padding: 0 10px;
-  max-width: 320px;
   margin: 0 auto;
-  width: 100%;
+  padding: 0 30px;
+  max-width: 360px;
 
   @media (min-width: $screen-sm) {
-    padding: 0 20px;
-    min-width: 768px;
-    margin: 0 auto;
-    width: 100%;
+    padding: 0 40px;
+    max-width: 840px;
   }
 
   @media (min-width: $screen-lg) {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+    padding: 0 60px;
+    max-width: 1280px;
   }
 
   &__title {
@@ -43,7 +39,8 @@
     }
   }
 
-  &__bullet{
+  &__bullet {
+    float: left;
     fill: $third-color;
     margin-top: 7px;
   }
@@ -63,6 +60,4 @@
     text-decoration: none;
     color: $dark;
   }
-
-
 }
