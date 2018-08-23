@@ -1,4 +1,4 @@
-// В этом файле должны быть стили для БЭМ-блока text-fild, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока text-fild, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
@@ -6,4 +6,36 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  &__input {
+    margin: 5px 0 30px;
+    width: 80px;
+    height: 50px;
+    border: none;
+    background-color: $gray--2;
+    font-size: $font-size;
+    font-family: $font-family;
+    text-align: center;
+    color: $gray-dark;
+    border-radius: 2px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $gray-light;
+    }
+  }
+
+  &__input-wrap {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__help-text {
+    font-size: $font-size;
+    font-family: $font-family;
+    color: $dark;
+    margin: 0 15px;
+  }
 }
