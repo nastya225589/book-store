@@ -1,0 +1,54 @@
+extends templates/layout-home.pug
+
+block meta
+  title book-store
+  meta(name='description', content='book-store')
+
+//- block append head
+//-   link(rel="stylesheet", href="some.css")
+//-   script(src='some.js')
+
+block nav
+  -var selected = 'рекомендации';
+  +main-nav(selected)
+
+block content
+  +product({
+    img: 'book1',
+    author: 'Эдди Юн',
+    name: 'Супер<span>-</span>потребители',
+    descr: 'Кто это и почему они так важны для вашего бизнеса',
+    code : '1090763',
+    stock : '5',
+    publishing : 'Издал',
+    price : '800',
+    title : 'Короткое описание',
+    text : 'В отличие от обычных покупателей суперпотребители очень заинтересованы в ваших товарах, а возможно, даже слегка помешаны на них.',
+    text2 : 'Они знают о кроссовках всё и имеют десятки пар. Они спортивные фанаты c копиями футболок любимой команды, а стены их гаражей украшены подписанной символикой.',
+    link : 'Показать полностью ',
+    pages: [
+      '/img/screen1.jpg',
+      '/img/screen2.jpg',
+      '/img/screen3.jpg',
+    ]
+  })
+
+  +social(15, 4, 150, 0)
+
+  .new-book
+    .new-book__wrap
+      .new-book__caption
+        h2.new-book__title Наши новинки
+        a.new-book__link(href="/") Все новинки
+      .new-book__inner
+        +new-book("/img/logics.jpg", 'Латеральная логика', 'Головоломный путь к нестандартному мышлению', '#')
+        +new-book('/img/GuideToLies.jpg', 'Путеводитель по лжи', 'Критическое мышление в эпоху постправды', '#')
+        +new-book('/img/physics.jpg', 'Дао физики', 'Исследование параллелей между современной физикой и восточной философией', '#')
+        +new-book('/img/NotObvious.jpg', 'Не очевидно', 'Как выявлять тренды раньше других', '#')
+
+
+
+  +library()
+
+//- block append page-bottom
+//-   script(src='some.js')

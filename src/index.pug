@@ -20,44 +20,105 @@ block content
 
   +menu-book('Все')
 
+  -
+    var books = [
+      {
+        photo:'logics',
+        title:'Латеральная логика',
+        desc:'Головоломный путь к нестандартному мышлению',
+        price:'500',
+        link:'/book.html'
+      },
+      {
+        photo:'GuideToLies',
+        title:'Путеводитель по лжи',
+        desc:'Критическое мышление в эпоху постправды',
+        price:'630'
+      },
+      {
+        photo:'physics',
+        title:'Дао физики',
+        desc:'Исследование параллелей между современной физикой и восточной философией',
+        price:'560'
+      },
+      {
+        hide: true,
+        photo:'NotObvious',
+        title:'Не очевидно',
+        desc:'Как выявлять тренды раньше других',
+        price:'365'
+      },
+      {
+        hide: true,
+        photo:'Super',
+        title:'Суперпотребители',
+        desc:'Кто это и почему они так важны для вашего бизнеса',
+        price:'500'
+      },
+      {
+        hide: true,
+        photo:'Marketing',
+        title:'Маркетинг в социальных сетях',
+        price:'630'
+      },
+      {
+        hide: true,
+        photo:'choice',
+        title:'Правильный выбор',
+        desc:'Практическое руководство по принятию взвешенных решений',
+        price:'560'
+      },
+      {
+        hide: true,
+        photo:'art',
+        title:'Главное в истории искусств',
+        desc:'Ключевые работы, темы, направления, техники',
+        price:'365'
+      }
+    ];
+
   .books
-    - var books = [{photo:"/img/logics.jpg", title:'Латеральная логика', text:'Головоломный путь к нестандартному мышлению', buy:'500 ₽'}, {photo:'/img/GuideToLies.jpg', title:'Путеводитель по лжи', text:'Критическое мышление в эпоху постправды', buy:'630 ₽'}, {photo:'/img/physics.jpg', title:'Дао физики', text:'Исследование параллелей между современной физикой и восточной философией', buy:'560 ₽'}, {photo:'/img/NotObvious.jpg', title:'Не очевидно', text:'Как выявлять тренды раньше других', buy:'365 ₽'}, {photo:'/img/Super.jpg', title:'Суперпотребители', text:'Кто это и почему они так важны для вашего бизнеса', buy:'500 ₽'}, {photo:'/img/Marketing.jpg', title:'Маркетинг в социальных сетях', buy:'630 ₽'}, {photo:'/img/choice.jpg', title:'Правильный выбор', text:'Практическое руководство по принятию взвешенных решений', buy:'560 ₽'}, {photo:'/img/art.jpg', title:'Главное в истории искусств', text:'Ключевые работы, темы, направления, техники', buy:'365 ₽'}];
-    for book in books
-      +book(book)
+    .books__content
+      .book__list
+
+        for book in books
+          +book(book)
 
 
-  +pagination()
+    +pagination()
 
   .delivery
     .delivery__border
-      h2.delivery__title Доставим в любое место
-      p.delivery__text // ну почти в любое
-      .delivery__inner
-        .delivery__wrapper
-          svg.delivery__photo(width="50", height="40")
-            use(xlink:href="img/sprite-svg.svg#book")
-          +delivery('Покупаете книги на сайте в любимом формате — бумажные, электронные или аудио.')
-        .delivery__wrapper
-          svg.delivery__photo(width="67", height="35")
-            use(xlink:href="img/sprite-svg.svg#car")
-          +delivery('Мы подарим вам «Набор читателя» и добавим в посылку.')
-        .delivery__wrapper
-          svg.delivery__photo(width="58", height="42")
-            use(xlink:href="img/sprite-svg.svg#present")
-          +delivery('Бесплатно доставляем заказы от 3 000  по всей России.')
-        .delivery__wrapper
-          svg.delivery__photo(width="52", height="47")
-            use(xlink:href="img/sprite-svg.svg#geostation")
-          +delivery('Доставка в более чем 300 городов России, по Москве и Санкт-Петербургу — бесплатно.')
+      .delivery__wrap
+        h2.delivery__title Доставим в любое место
+        p.delivery__text // ну почти в любое
+        .delivery__inner
+          .delivery__item
+            svg.delivery__icon(width="50", height="40")
+              use(xlink:href="img/sprite-svg.svg#book")
+            +delivery('Покупаете книги на сайте в любимом формате — бумажные, электронные или аудио.')
+          .delivery__item
+            svg.delivery__icon(width="67", height="35")
+              use(xlink:href="img/sprite-svg.svg#car")
+            +delivery('Мы подарим вам «Набор читателя» и добавим в посылку.')
+          .delivery__item
+            svg.delivery__icon(width="58", height="42")
+              use(xlink:href="img/sprite-svg.svg#present")
+            +delivery('Бесплатно доставляем заказы от 3 000  по всей России.')
+          .delivery__item
+            svg.delivery__icon(width="52", height="47")
+              use(xlink:href="img/sprite-svg.svg#geostation")
+            +delivery('Доставка в более чем 300 городов России, по Москве и Санкт-Петербургу — бесплатно.')
 
   .new-book
-    .new-book__caption
-      h2.new-book__title Наши новинки
-      a.new-book__link(href="/") Все новинки
-    .new-book__inner
-      +new-book("/img/logics.jpg", 'Латеральная логика', 'Головоломный путь к нестандартному мышлению', '#')
-      +new-book('/img/GuideToLies.jpg', 'Путеводитель по лжи', 'Критическое мышление в эпоху постправды', '#')
-      +new-book('/img/physics.jpg', 'Дао физики', 'Исследование параллелей между современной физикой и восточной философией', '#')
-      +new-book('/img/NotObvious.jpg', 'Не очевидно', 'Как выявлять тренды раньше других', '#')
+    .new-book__wrap
+      .new-book__caption
+        h2.new-book__title Наши новинки
+        a.new-book__link(href="/") Все новинки
+      .new-book__inner
+        +new-book("/img/logics.jpg", 'Латеральная логика', 'Головоломный путь к нестандартному мышлению', '#')
+        +new-book('/img/GuideToLies.jpg', 'Путеводитель по лжи', 'Критическое мышление в эпоху постправды', '#')
+        +new-book('/img/physics.jpg', 'Дао физики', 'Исследование параллелей между современной физикой и восточной философией', '#')
+        +new-book('/img/NotObvious.jpg', 'Не очевидно', 'Как выявлять тренды раньше других', '#')
 //- block append page-bottom
 //-   script(src='some.js')

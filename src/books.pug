@@ -1,0 +1,33 @@
+extends templates/layout-home.pug
+
+block meta
+  title book-store
+  meta(name='description', content='book-store')
+
+//- block append head
+//-   link(rel="stylesheet", href="some.css")
+//-   script(src='some.js')
+
+block content
+  .books
+    .books__content
+      .books__list
+        .books__item sdfvdvdasv
+        .books__item sdfvdvdasv
+        .books__item sdfvdvdasv
+    //- button.btn.j-view-books Показать ещё
+    .books__pagination
+      ul.pagination__list
+        li.pagination__item
+          a.pagination__link 1
+        li.pagination__item
+          a.pagination__link 2
+        li.pagination__item
+          a.pagination__link 3
+        li.pagination__item
+          a.pagination__link 4
+        li.pagination__item
+          a.pagination__link 5
+
+
+
