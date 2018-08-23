@@ -20,11 +20,8 @@
   &__inner {
     display: grid;
     grid-template-columns: 300px 285px 285px 300px;
-    grid‑template‑rows: repeat(2, auto); /* ← ОБЯЗАТЕЛЬНО */
+    grid‑template‑rows: repeat(2, auto);
     grid‑auto‑flow: column;
-
-    // grid-template-rows: auto;
-    // grid‑auto‑rows: minmax(170px, auto);
     grid-gap: 10px;
     grid-template-areas:
       "recommendation__new-article recommendation__season-book  recommendation__season-book     recommendation__present"
@@ -191,5 +188,4 @@
     font-size: $font-size;
     line-height: 30px;
   }
-
 }
