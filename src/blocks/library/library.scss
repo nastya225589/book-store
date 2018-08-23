@@ -14,35 +14,43 @@
   background-position: center;
   color: #fff;
 
+  &__wrap {
+    margin: 0 auto;
+    padding: 0 30px;
+    max-width: 360px;
+
+    @media (min-width: $screen-sm) {
+      padding: 0 40px;
+      max-width: 840px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 0 60px;
+      max-width: 1280px;
+    }
+  }
+
   &__title {
     margin: 0;
     padding: 90px 0 30px;
-    width: 300px;
     font-size: $font-size--h3;
     font-weight: 700;
     text-align: center;
 
     @media (min-width: $screen-sm) {
       padding: 125px 0 30px;
-      width: 600px;
       font-size: $font-size--h1;
-    }
-
-    @media (min-width: $screen-lg) {
-      width: 850px;
     }
   }
 
   &__text {
     padding-bottom: 50px;
-    margin: 0;
-    width: 300px;
+    margin: 0 auto;
     text-align: center;
     font-size: $font-size;
 
     @media (min-width: $screen-sm) {
       padding-bottom: 70px;
-      width: 600px;
     }
 
     @media (min-width: $screen-lg) {
