@@ -6,17 +6,37 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 360px;
+
+  @media (min-width: $screen-sm) {
+    padding: 0 40px;
+    max-width: 840px;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 0 60px;
+    max-width: 1280px;
+  }
+
   &__list {
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   &__item {
+    margin-right: 20px;
     width: 30px;
-    height: 30px;
-    margin: 10px;
+    padding: 3px 0;
+
+    &:hover {
+      border-radius: 50%;
+      background-color: $main-color;
+    }
   }
 
   &__link {
@@ -24,13 +44,11 @@
     font-size: $font-size;
     font-weight: 700;
     text-align: center;
-
-    &:hover {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: $main-color;
-    }
-
+    color: $dark;
+    text-decoration: none;
   }
+}
+
+.books__pagination {
+  margin: 30px 0 60px;
 }
