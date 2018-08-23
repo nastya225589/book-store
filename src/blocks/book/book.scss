@@ -6,22 +6,63 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  margin: 0 auto;
-  padding-bottom: 50px;
-  align-content: stretch;
-  position: relative;
+  &__list {
+    padding: 0 30px;
+    margin: 0 auto;
+    max-width: 360px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  @media (min-width: $screen-sm) {
+    @media (min-width: $screen-sm) {
+      padding: 0 40px;
+      max-width: 840px;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-top: 50px;
+      padding: 0 60px;
+      max-width: 1280px;
+      justify-content: space-between;
+    }
   }
 
-  &__link img {
-    height: 370px;
-    display: block;
+  &__item {
+    width: 260px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    align-content: stretch;
+    position: relative;
+
+    @media (min-width: $screen-sm) {
+      margin: 0;
+    }
+
+    &:hover .book__photo {
+      box-shadow: 0px 3px 64.2px -18.2px $second-color;
+    }
+
+    &:hover .book__price {
+      color: $second-color;
+    }
+  }
+
+  &__link {
+    color: $dark;
+    text-decoration: none;
+
+    img {
+      height: 370px;
+      display: block;
+    }
   }
 
   &__title {
     margin: 40px 0 30px;
-    width: 250px;
     font-size: $font-size--h3;
     font-weight: 700;
     color: $dark;
@@ -31,14 +72,13 @@
     }
   }
 
-  &__text {
+  &__desc {
     margin: 20px 0;
-    width: 250px;
     font-size: $font-size;
     font-style: italic;
   }
 
-  &__buy {
+  &__price {
     margin: 0;
     font-size: $font-size;
     font-weight: 700;
@@ -52,24 +92,10 @@
   }
 }
 
-.books {
-  width: 300px;
-  margin: 0 auto;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.hide-mobile {
+  display: none;
 
   @media (min-width: $screen-sm) {
-    width: 728px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  @media (min-width: $screen-lg) {
-    padding-top: 50px;
-    width: 1160px;
-    justify-content: space-between;
+    display: block;
   }
 }

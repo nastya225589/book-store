@@ -1,9 +1,9 @@
 mixin book(books)
-  .book
+  div(class= books.hide ? 'book__item hide-mobile' : 'book__item')
     .book__photo
       a.book__link(href= books.link)
-        img.book__img(src= books.photo, alt='Обложка книги', width='260', height='370')
+        img.book__img(src= /img/ + books.photo + '.jpg', alt='Обложка книги', width='260', height='370')
     h3.book__title
       a.book__link(href= books.link)= books.title
-    p.book__text= books.text
-    p.book__buy= books.buy
+    p.book__desc= books.desc
+    p.book__price= books.price + ' ₽'
