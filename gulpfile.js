@@ -56,6 +56,7 @@ let postCssPlugins = [
 // Изображения, которые нужно копировать
 let images = [
   dirs.source + '/img/*.{gif,png,jpg,jpeg,svg,ico}',
+  dirs.source + '/img/**/*.{gif,png,jpg,jpeg,svg,ico}',
   dirs.source + '/blocks/**/img/*.{gif,png,jpg,jpeg,svg}',
   '!' + dirs.source + '/blocks/sprite-png/png/*',
   '!' + dirs.source + '/blocks/sprite-svg/svg/*',
@@ -66,9 +67,9 @@ let jsList = [
   './node_modules/jquery/dist/jquery.min.js',
   './node_modules/jquery-migrate/dist/jquery-migrate.min.js',
   './node_modules/slick-carousel/slick/slick.js',
-  './node_modules/svg4everybody/dist/svg4everybody.js',
+  // './node_modules/svg4everybody/dist/svg4everybody.js',
   './node_modules/object-fit-images/dist/ofi.js',
-  './node_modules/aos/dist/aos.js',
+  // './node_modules/aos/dist/aos.js',
   dirs.source + '/js/script.js',
 ];
 
