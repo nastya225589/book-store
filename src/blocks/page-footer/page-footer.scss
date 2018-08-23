@@ -5,25 +5,22 @@
 .page-footer {
 
   $block-name:                &; // #{$block-name}__element
-  padding: 0 10px;
+
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 360px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 320px;
-  margin: 0 auto;
-  width: 100%;
 
   @media (min-width: $screen-sm) {
-    padding: 0 20px;
-    min-width: 768px;
-    margin: 0 auto;
-    width: 100%;
+    padding: 0 40px;
+    max-width: 840px;
   }
 
   @media (min-width: $screen-lg) {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+    padding: 0 60px;
+    max-width: 1280px;
   }
 
   &__inner {
@@ -38,12 +35,12 @@
     font-size: $font-size--sm;
     color: $gray;
 
-    @media (min-width: $screen-sm) {
-      padding-left: 30px;
-    }
-
     p {
       margin: 0;
+    }
+
+    @media (min-width: $screen-sm) {
+      padding-left: 30px;
     }
   }
 
