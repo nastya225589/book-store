@@ -9,22 +9,25 @@
   background-color: $gray-light;
 
   &__inner {
+    padding: 0 30px;
+    max-width: 360px;
     margin: 0 auto;
-    width: 300px;
 
     @media (min-width: $screen-sm) {
-      width: 728px;
+      padding: 0 40px;
+      max-width: 840px;
     }
 
     @media (min-width: $screen-lg) {
-      width: 1160px;
+      padding: 0 60px;
+      max-width: 1280px;
     }
   }
 
   &__list {
-    display: flex;
     margin: 0;
-    padding-left: 20px;
+    padding: 0;
+    display: flex;
     list-style: none;
 
     @media (min-width: $screen-lg) {
@@ -55,7 +58,7 @@
   }
 
   &__item--active a {
-    padding-bottom: 19px;
+    padding-bottom: 9px;
     color: $third-color;
     border-bottom: 3px solid $second-color;
   }
