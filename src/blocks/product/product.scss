@@ -1,4 +1,4 @@
-// В этом файле должны быть стили для БЭМ-блока product, его элементов, 
+// В этом файле должны быть стили для БЭМ-блока product, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
@@ -6,4 +6,194 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 360px;
+  position: relative;
+
+  @media (min-width: $screen-sm) {
+    padding: 0 40px;
+    max-width: 840px;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 0 60px;
+    max-width: 1280px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $screen-sm) {
+      display: grid;
+      grid-template-columns: 260px 460px;
+      grid-column-gap: 40px;
+      grid-template-areas:
+        "product__img-wrap    product__header"
+        "product__img-wrap    product__info"
+        "product__description product__description";
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: 160px 360px 560px;
+      grid-column-gap: 40px;
+      grid-template-areas:
+        "product__img-wrap product__img-wrap    product__header"
+        "product__img-wrap product__img-wrap    product__info"
+        ".                 product__description product__description";
+    }
+  }
+
+  &__img-wrap {
+    grid-area: product__img-wrap;
+    margin: 30px 0;
+
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: 160px 360px;
+      grid-column-gap: 40px;
+      grid-template-areas:
+        "product__thumbs product__img";
+    }
+  }
+
+  &__img {
+    @media (min-width: $screen-sm) {
+      width: 259px;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-area: product__img;
+      width: 320px;
+    }
+  }
+
+  &__thumbs {
+    display: none;
+
+    @media (min-width: $screen-sm) {
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-around;
+      border: 4px solid $gray-light;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-area: product__thumbs;
+      display: grid;
+    }
+  }
+
+  &__thumbs-link {
+    img {
+      width: 77px;
+
+      @media (min-width: $screen-lg) {
+        width: 120px;
+      }
+    }
+  }
+
+  &__header {
+    grid-area: product__header;
+    order: -1;
+  }
+
+  &__title {
+    margin: 20px 0 25px;
+    font-size: $font-size--h1;
+    font-weight: 700;
+    color: $dark;
+
+    small {
+      display: block;
+      font-size: $font-size--sm;
+    }
+
+    @media (min-width: $screen-sm) {
+      span {
+        display: none;
+      }
+    }
+
+  }
+
+  &__descr {
+    margin: 0;
+    order: -1;
+    font-size: $font-size;
+  }
+
+  &__info {
+    grid-area: product__info;
+  }
+
+  &__table {
+    th {
+      padding-bottom: 25px;
+      padding-right: 50px;
+      font-weight: 400;
+      text-align: left;
+      font-size: $font-size--sm;
+      color: $gray--1;
+    }
+
+    td {
+      padding-bottom: 25px;
+      color: $dark;
+      font-size: $font-size--sm;
+    }
+  }
+
+  &__price {
+    font-size: $font-size;
+    font-weight: 700;
+  }
+
+  &__form {
+    width: 80px;
+    height: 50px;
+    display: inline-block;
+  }
+
+  &__description {
+    grid-area: product__description;
+  }
+
+  &__description_title {
+    margin: 50px 0 23px;
+    color: $dark;
+    font-size: $font-size--h3;
+  }
+
+  &__text {
+    margin: 25px 0 30px;
+    font-size: $font-size;
+    color: $gray-dark;
+
+    @media (min-width: $screen-sm) {
+      width: 661px;
+    }
+  }
+
+  &__link {
+    margin: 0 0 40px 0;
+    padding: 0;
+    font-size: $font-size;
+    color: $third-color;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__arrow-down {
+    margin: 0 10px;
+    fill: $third-color;
+  }
 }

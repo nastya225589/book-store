@@ -30,7 +30,7 @@ mixin product(props)
   article.product
     .product__inner
       .product__img-wrap
-        img.product__img(src=props.img)
+        img.product__img(src=/img/ + props.img + '.jpg')
         .product__thumbs
           - props.pages.forEach(function(item) {
               a.product__thumbs-link(href=item)
@@ -39,8 +39,8 @@ mixin product(props)
       .product__header
         h1.product__title
           small= props.author
-          = props.name
-        p.product__descr= descr
+          != props.name
+        p.product__descr= props.descr
       .product__info
         table.product__table
           tr
@@ -48,25 +48,28 @@ mixin product(props)
             td= props.code
           tr
             th В наличии
-            td #{stock} шт.
+            td #{stock}шт.
           tr
             th Издательство
-            td= publishing
+            td= props.publishing
           tr
             th Цена
-            td= price
+            td.product__price= props.price + ' ₽'
         form.product__form
           +text-fild({
             mods: 'gray',
             val: '1',
+            helpText: 'шт.',
             attrs: {
               type: 'number',
               name: 'number',
             }
           })(class="product__form-input")
           +btn('Добавить в корзину')(class="product__form-btn")
-
-
-
-
-
+      .product__description
+        h2.product__description_title= props.title
+        p.product__text= props.text
+        p.product__text= props.text2
+        button.product__link(href="/")= props.link
+          svg.product__arrow-down(width="13", height="8")
+            use(xlink:href="img/sprite-svg.svg#arrow_down")
