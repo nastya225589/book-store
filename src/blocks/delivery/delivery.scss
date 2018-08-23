@@ -6,16 +6,19 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  width: 300px;
   margin: 0 auto;
+  padding: 0 10px;
+  max-width: 360px;
   position: relative;
 
   @media (min-width: $screen-sm) {
-    width: 728px;
+    padding: 0 15px;
+    max-width: 840px;
   }
 
   @media (min-width: $screen-lg) {
-    width: 1160px;
+    padding: 0 30px;
+    max-width: 1280px;
   }
 
   &__border {
@@ -27,7 +30,7 @@
       height: 10px;
       position: absolute;
       top: -1px;
-      left: 60px;
+      left: 75px;
       background-color: $gray-light--light;
 
       @media (min-width: $screen-sm) {
@@ -45,7 +48,7 @@
       height: 10px;
       position: absolute;
       bottom: -1px;
-      right: 60px;
+      right: 75px;
       background-color: $gray-light--light;
 
       @media (min-width: $screen-sm) {
@@ -56,6 +59,30 @@
         width: 740px;
       }
     }
+  }
+
+  &__wrap {
+    padding: 0 15px;
+
+    @media (min-width: $screen-sm) {
+      padding: 0 25px;
+    }
+  }
+
+  &__title {
+    margin: 45px 0 30px;
+    font-size: $font-size--h2;
+    color: $dark;
+
+    @media (min-width: $screen-sm) {
+      margin: 45px 0 20px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 60px;
+    font-size: $font-size;
+    color: $gray-dark;
   }
 
   &__inner {
@@ -71,47 +98,27 @@
     }
   }
 
-  &__wrapper {
+  &__item {
+    margin-bottom: 40px;
+    padding: 0 30px;
+    width: 316px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 30px;
 
     @media (min-width: $screen-lg) {
       padding: 0;
+      margin: 0;
+      width: 250px;
     }
   }
 
-  &__title {
-    margin: 45px 13px 35px;
-    width: 300px;
-    font-size: $font-size--h2;
-    color: $dark;
-
-    @media (min-width: $screen-sm) {
-      margin: 50px 25px 30px;
-      width: 410px;
-    }
-  }
-
-  &__text {
-    margin: 0 13px 55px;
-    font-size: $font-size;
-    color: $gray-dark;
-
-    @media (min-width: $screen-sm) {
-      margin: 0 25px 60px;
-    }
-  }
-
-  &__photo {
+  &__icon {
     display: flex;
     justify-content: center;
   }
 
   &__descr {
-    margin: 35px 0 50px;
-    width: 243px;
     text-align: center;
     font-size: $font-size--sm;
     color: $dark;
