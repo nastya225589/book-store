@@ -7,22 +7,24 @@
   $block-name:                &; // #{$block-name}__element
 
   background-color: #fff;
-  margin: 0 auto;
 
   &__inner {
-    padding-top: 15px;
-    width: 300px;
+    padding: 15px 30px 7px;
+    max-width: 360px;
     margin: 0 auto;
+    width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 
     @media (min-width: $screen-sm) {
-      width: 728px;
+      max-width: 840px;
+      padding: 15px 40px 7px;
     }
 
     @media (min-width: $screen-lg) {
-      width: 1160px;
+      padding: 15px 60px 7px;
+      max-width: 1280px;
     }
   }
 
@@ -53,7 +55,7 @@
 
   &__nav {
     @media (min-width: $screen-sm) {
-      margin-right: 20px;
+      margin-right: 40px;
     }
   }
 
