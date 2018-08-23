@@ -1,12 +1,23 @@
 mixin social(fbNum, vkNum, likes, unlikes)
   .social
-    ul.social__list
-      li.social__item
-        a.social__link.social__link--fb= fbNum
-      li.social__item
-        a.social__link.social__link--vk= vkNum
-      li.social__item
-        button.social__btn.social__btn--likes= likes
-      li.social__item
-        button.social__btn.social__btn--unlikes= unlikes
+    .social__inner
+      ul.social__list
+        li.social__item
+          svg.social__icon(width="20", height="20")
+            use(xlink:href="img/sprite-svg.svg#fb")
+          a.social__link.social__link--fb= fbNum
+        li.social__item
+          svg.social__icon(width="20", height="20")
+            use(xlink:href="img/sprite-svg.svg#vk")
+          a.social__link.social__link--vk= vkNum
+        li.social__item
+          svg.social__icon(width="18", height="19")
+            use(xlink:href="img/sprite-svg.svg#thumbs-up")
+          button.social__btn.social__btn--likes= likes
+        li.social__item
+          svg.social__icon(width="18", height="19")
+            use(xlink:href="img/sprite-svg.svg#thumbs-down")
+          button.social__btn.social__btn--unlikes= unlikes
+
+
 
