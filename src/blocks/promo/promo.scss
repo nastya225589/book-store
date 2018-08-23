@@ -5,59 +5,88 @@
 .promo {
 
   $block-name:                &; // #{$block-name}__element
-  color: #000;
 
-  &__slick {
-    padding: 0 10px;
-    display: flex;
-    justify-content: center;
-    max-width: 320px;
-    margin: 0 auto;
-    width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+  max-width: 360px;
+  color: #000;
+  position: relative;
+
+  @media (min-width: $screen-sm) {
+    padding: 0 40px;
+    max-width: 840px;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 0 60px;
+    max-width: 1280px;
+  }
+
+  &__wrapper {
+    display: flex !important;
+    justify-content: space-around;
 
     @media (min-width: $screen-sm) {
-      justify-content: space-around;
-      align-items: center;
-      padding: 0 20px;
-      min-width: 768px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    @media (min-width: $screen-lg) {
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    &__wrapper {
-      display: flex;
+      padding: 0 90px;
     }
   }
 
+  &__book {
+    margin-bottom: 110px;
 
+    @media (min-width: $screen-sm) {
+      margin-bottom: 50px;
+      padding: 0;
+    }
+  }
 
   &__text {
-    width: 300px;
-    margin: 0 auto;
-    margin-bottom: 25px;
+    padding: 0 20px;
+    margin: 40px 0 25px;
+    width: 333px;
     font-size: $font-size--sm;
     font-style: italic;
 
     @media (min-width: $screen-sm) {
+      padding: 0;
+      width: 283px;
       margin: 55px 0 27px;
     }
 
     @media (min-width: $screen-lg) {
       margin: 60px 0 30px;
-      width: 328px;
+      padding: 0 40px;
+      width: 416px;
       font-size: $font-size;
     }
   }
 
+  &__border {
+    padding: 0 10px;
+    max-width: 360px;
+    border: 8px solid $gray-light;
+
+    @media (min-width: $screen-sm) {
+      padding-left: 33px;
+      max-width: 623px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-left: 30px;
+      width: 500px;
+    }
+
+    &-wrap {
+      width: 300px;
+
+      @media (min-width: $screen-sm) {
+        width: 455px;
+      }
+    }
+  }
+
   &__title {
-    width: 280px;
-    margin: 45px 30px 40px 10px;
+    margin: 35px 0;
     font-size: $font-size--h3;
     font-weight: 700;
 
@@ -74,9 +103,7 @@
   }
 
   &__btn {
-    padding-bottom: 25px;
-    margin: auto;
-    width: 300px;
+    margin-bottom: 25px;
 
     @media (min-width: $screen-sm) {
       margin: 0;
@@ -94,28 +121,83 @@
     }
   }
 
-  &__border {
-    padding-left: 12px;
-    border: 8px solid $gray-light;
-
-    @media (min-width: $screen-sm) {
-      padding-left: 33px;
-      width: 555px;
-    }
-
-    @media (min-width: $screen-lg) {
-      padding-left: 30px;
-      width: 440px;
-    }
-  }
-
   &__photo {
     display: none;
 
     @media (min-width: $screen-lg) {
-      display: block;
-      padding-top: 125px;
+      margin-left: 120px;
+      display: flex;
+      align-items: center;
     }
   }
 
+  &__slick {
+    margin-bottom: 40px;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    border: none;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+
+    @media (min-width: $screen-sm) {
+      bottom: 50%;
+      margin: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &-prev {
+      left: 105px;
+
+      @media (min-width: $screen-sm) {
+        left: 40px;
+      }
+
+      @media (min-width: $screen-sm) {
+        left: 60px;
+      }
+    }
+
+    &-next {
+      right: 105px;
+
+      @media (min-width: $screen-sm) {
+        right: 40px;
+      }
+
+      @media (min-width: $screen-sm) {
+        right: 60px;
+      }
+    }
+  }
+
+  &__bg-arrow {
+    fill: $main-color;
+
+    &:hover {
+      fill: $second-color;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 13px;
+    fill: $second-color;
+
+    &:hover {
+      fill: #fff;
+    }
+
+    &-prev {
+      left: 38%;
+    }
+
+    &-next {
+      right: 38%;
+    }
+  }
 }
